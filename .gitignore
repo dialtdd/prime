@@ -1,0 +1,6 @@
+# Ignore target
+prime
+
+# Ignore object files
+*.o
+
