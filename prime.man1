@@ -1,0 +1,30 @@
+PRIME (1)
+
+Usage: prime [-dlpt]
+
+The program will compute and print a table of prime numbers with per-page summaries of prime numbers and pairs of prime numbers (two successive prime numbers p, q such that q - p = 2). Both members of each pair are flagged with '*'. Report production ends after 10 seconds.
+
+Each full page has 500 primes, listed in groups of 5 lines with 10 primes on each line.
+
+With no options, the report is 
+	Computation begins at 
+
+OPTIONS:
+
+-d n - Initial start count for pairs: report page pair summary count will show the sum of n and the number computed.
+	Default 0.
+
+-t n - Initial start count for primes: page prime summary count will show the sum of n and the number computed.
+	Default 0.
+
+-l n - Report will begin with the first prime larger than n. (n -1 if n is a multiple of 6 and n - 1 is prime).
+	Default 0.
+
+-p n - First page number. Suitable values for d, t, l, and p enable continuation of a previous run.
+	default 1.
+
+BUGS:
+
+Options are not thoroughly tested.
+The 10 second timer is hard coded; it should have an optional value with default.
+
