@@ -19,6 +19,7 @@ char copyright[] = "prime Copyright 1990, 1998 - Thomas D. Dial";
 
 unsigned long int exlst();
 void line(unsigned long int j, char star);
+void title();
 
 unsigned char list[TABSIZE];
 int llist = 0;              /* number of entries valid in list */
@@ -35,7 +36,7 @@ int upper = 1;
 char * end;		    /* end of strtoul scan */
 int base;		    /* base for input to strtoul */
 
-setlimit(unsigned long int j)
+void setlimit(unsigned long int j)
 /*
 	figure approximate integer square root of j
 */
@@ -72,7 +73,7 @@ unsigned long int exlst()
 
 }
 
-printprime(unsigned long int j)
+void printprime(unsigned long int j)
 /*
 	Format and display the new prime(s).
 */
@@ -121,13 +122,13 @@ void line(unsigned long int j, char star)
 	}
 }
 
-title()
+void title()
 {
 	printf("\fTable of Prime Integers - Page %d\n\n", pgno++);
 }
 
 
-findp() {
+void findp() {
  int i;
  j = alarm(runtime);
  for (j=6;;j+=6) {
@@ -167,7 +168,7 @@ static void signal_handler(int sig)
  exit(0);
 }
 
-main(int argc,char **argv)
+int main(int argc,char **argv)
 {
  int arg;
 
@@ -212,4 +213,6 @@ main(int argc,char **argv)
  title();
  if (startp == 0) { line(2,' '); line(3,' '); }
  findp();
+
+ return 0;
 }
