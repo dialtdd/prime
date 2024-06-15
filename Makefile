@@ -8,7 +8,7 @@ all: prime
 clean:
 	-rm -f prime *.o
 
-prime: prime11.o
+prime: prime.o
 	$(CC) $(CCFLAGS) -o prime $^
 
 .cc.o:
